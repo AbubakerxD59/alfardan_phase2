@@ -1,0 +1,725 @@
+<header class="navbar  sticky-top  shadow">
+	<a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="http://localhost/alfardan/public/admin/dashboard">
+		<img src="http://localhost/alfardan/public/alfardan/assets/logo.png"></a>
+
+	<a href="#" class="pe-3 download-btn " download="PDF"><img src="http://localhost/alfardan/public/alfardan/assets/download-svg.png" class="pe-3">download page </a> 
+	<button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+			<i class="fas fa-bars navbar-toggle-icon"></i>
+	</button> 
+</header>
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse  ">
+      <div class="position-sticky">
+        <div class="sidebar-wrapper">
+          
+          <ul class="nav flex-column mb-3">
+            <li>
+              <h2 class="sidebar-heading">Users</h2>
+            </li>
+            <li class="nav-item border-left">
+             <a class="nav-link active" href="http://localhost/alfardan/public/admin/dashboard">
+                Tenant
+              </a>
+            </li>
+          
+            <li class="nav-item border-left">
+              <a class="nav-link" href="http://localhost/alfardan/public/admin/empolyees">  
+                Employees
+              </a>
+            </li>
+
+            <li class="nav-item border-left">
+              <a class="nav-link" href="http://localhost/alfardan/public/admin/tenant/request">
+                Tenant Requests
+              </a>
+            </li>
+
+            
+            <li class="nav-item border-left">
+              <a class="nav-link" href="http://localhost/alfardan/public/admin/family-members">
+               Family Members
+              </a>
+            </li>
+
+            <li class="nav-item border-left">
+              <a class="nav-link" href="http://localhost/alfardan/public/admin/corporate-individual">
+                Corporate Individuals
+              </a>
+            </li>
+            <li>
+              <h2 class="sidebar-heading2 mt-4"><a href="http://localhost/alfardan/public/admin/newsfeed"> News Feed</a></h2>
+            </li>
+            <li>
+              <h2 class="sidebar-heading">Lifestyle</h2>
+              
+            </li>
+            <li class="nav-item border-left">
+              <a class="nav-link" aria-current="page" href="http://localhost/alfardan/public/admin/events">
+                Events
+              </a>
+            </li>
+
+            <li class="nav-item border-left">
+              <a class="nav-link" href="http://localhost/alfardan/public/admin/classes">
+                Classes
+              </a>
+            </li>
+
+            <li class="nav-item border-left">
+              <a class="nav-link" href="http://localhost/alfardan/public/admin/facilities">
+                Facilities
+              </a>
+            </li>
+
+            <!-- Hospetality -->
+            <li>
+              <h2 class="sidebar-heading">Hospitality </h2>
+            </li>
+
+            <li class="nav-item border-left">
+              <a class="nav-link" aria-current="page" href="http://localhost/alfardan/public/admin/hotels">
+                Hotels
+              </a>
+            </li>
+
+            <li class="nav-item border-left">
+              <a class="nav-link" href="http://localhost/alfardan/public/admin/restaurants">
+                Restaurants
+              </a>
+            </li>
+
+            <li class="nav-item border-left">
+              <a class="nav-link" href="http://localhost/alfardan/public/admin/wellness">
+                Wellness
+              </a>
+            </li>
+
+            <!-- buy and sell -->
+            <li>
+              <h2 class="sidebar-heading2 mt-4"><a href="http://localhost/alfardan/public/admin/buy/sell"> Buy & Sell</a></h2>
+            </li>
+
+            <li>
+              <h2 class="sidebar-heading">Leasing</h2>
+            </li>
+
+            <li class="nav-item border-left">
+              <a class="nav-link" aria-current="page" href="http://localhost/alfardan/public/admin/properties">
+                Properties 
+              </a>
+            </li>
+
+            <li class="nav-item border-left">
+              <a class="nav-link" href="http://localhost/alfardan/public/admin/apartments">
+                Apartments
+              </a>
+            </li> 
+
+            <li>
+              <h2 class="sidebar-heading2 mt-4"><a href="http://localhost/alfardan/public/admin/maintenance">Maintenance</a></h2>
+            </li>
+
+          <!--   <li>
+              <h2 class="sidebar-heading2"><a href="3">Media</a></h2>
+            </li> -->
+
+            <li>
+              <h2 class="sidebar-heading">Concierge</h2>
+            </li>
+
+            <li class="nav-item border-left">
+              <a class="nav-link " aria-current="page" href="http://localhost/alfardan/public/admin/services">
+                Services 
+              </a>
+            </li>
+
+            <li class="nav-item border-left">
+              <a class="nav-link" href="http://localhost/alfardan/public/admin/pet-form">
+                Pet Form
+              </a>
+            </li>
+
+            <li class="nav-item border-left">
+              <a class="nav-link" href="http://localhost/alfardan/public/admin/maintenance-in-absentia">
+                Maintennance in Absentia
+              </a>
+            </li>
+
+            <li class="nav-item border-left">
+              <a class="nav-link" href="http://localhost/alfardan/public/admin/automated-guest-access">
+                Automated Guest Access
+              </a>
+            </li>
+
+            <li class="nav-item border-left">
+              <a class="nav-link" href="http://localhost/alfardan/public/admin/access-key-card">
+                Access Key Card
+              </a>
+            </li>
+
+            <li class="nav-item border-left">
+              <a class="nav-link" href="http://localhost/alfardan/public/admin/vehicle-form">
+                Vehicle Form
+              </a>
+            </li> 
+
+            <li class="nav-item border-left">
+              <a class="nav-link" href="http://localhost/alfardan/public/admin/housekeeping-form">
+                Housekeeping Form
+              </a>
+            </li> 
+
+            <li>
+              <h2 class="sidebar-heading2 mt-4"><a href="http://localhost/alfardan/public/admin/privilege-program">Privilege Program</a></h2>
+            </li>
+
+            <li><h2 class="sidebar-heading2"><a href="http://localhost/alfardan/public/admin/alfardan-living-profile">Alfarada Living</a></h2></li>
+
+            <li>
+              <h2 class="sidebar-heading">Customer Service</h2>
+            </li>
+
+             <li class="nav-item border-left">
+              <a class="nav-link " href="http://localhost/alfardan/public/admin/servay">
+                Survey 
+              </a>
+            </li>
+
+            <li class="nav-item border-left">
+              <a class="nav-link" href="http://localhost/alfardan/public/admin/complaints">
+                Complaints
+              </a>
+            </li>
+
+            <li class="nav-item border-left">
+              <a class="nav-link" href="http://localhost/alfardan/public/admin/circular-update">
+                Circular Updates
+              </a>
+            </li>
+
+          </ul>       
+        </div>
+      </div>
+    </nav>
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>ALFARDAN | User Info</title>
+  	<meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Bootstrap core CSS -->
+      <link href="http://localhost/alfardan/public/alfardan/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Custom styles  -->
+      <link rel="stylesheet" type="text/css" href="http://localhost/alfardan/public/alfardan/css/style.css">
+
+       <link rel="stylesheet" type="text/css" href="http://localhost/alfardan/public/alfardan/css/jquery.multiselect.css">
+
+      <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+      
+      <link rel="stylesheet" type="text/css" href="http://localhost/alfardan/public/alfardan/css/slick-theme.css">
+      
+      <link rel="stylesheet" type="text/css" href="http://localhost/alfardan/public/alfardan/css/slick.css">
+
+
+            <style>
+        /*.swal-text,
+        .swal-title{
+            color: #fff !important;
+        }*/
+        .swal-overlay--show-modal .swal-modal{
+            /*background-color: #000 !important;*/
+            border: 1px solid #707070 !important;
+        }
+        .swal-button--danger{
+            background-color: #C89328 !important;
+            width: 133px !important;
+        }
+        .swal-button--cancel{
+          background-color: #000 !important;
+          color: #fff !important;
+          border: 1px solid #C89328 !important;
+          width: 133px !important;
+        }
+      </style>
+  </head>
+  <body>
+	  
+<main class="user-info-wrapper col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-5 position">
+
+          <h2 class="table-cap pb-2 mb-3 text-capitalize">Neha Shahzad<span class="user-info-id">AF13</span></h2>
+
+          <!-- First row -->
+          <div class="row mb-4">
+            <div class="col-xxl-3 col-xl-3">
+              <figure class="user-profile-pic">
+                                <img src="http://localhost/alfardan/public/placeholder.png" alt="User Info Profile Pic">
+                              </figure>
+            </div>
+            <div class="col-xxl-9 col-xl-9 mt-auto ">
+              <div class=" table-responsive tenant-table ">
+                <caption>
+                  <h2 class="table-cap pb-1 mb-3 text-capitalize float-start clear-both">user info</h2>
+                                     <a href="" download="1644429884pdf.pdf" class="contract-btn float-end mb-2">View Contract</a>
+                                    <!-- <a href="#" class="contract-btn float-end mb-2">View Contract</a> -->
+                </caption>
+                <table class="table  table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col"><span>User Name</span></th>
+                      <th scope="col"><span>Email</span></th>
+                      <th scope="col"><span>Start Date</span></th>
+                      <th scope="col"><span>Date of Birth</span></th>
+                      <th scope="col"><span>Phone Number</span></th> 
+                      <th scope="col"><span>Tel. Number</span></th>
+                      <th scope="col"><Span>Property & Apartment</Span></th>
+                      <th scope="col"><span>Tenant Type</span></th>
+                      <th scope="col"><span>Leasing Type</span></th>
+                      <th scope="col"><span>Vehicle Registered</span></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Neha Shahzad</td>
+                      <td>usr@gmail.com</td>
+                      <td>2022-02-02</td>
+                      <td>1995-11-26</td>
+                      <td>9233504217758</td>                     
+                      <td>042123458</td>
+                      <td>property 2 & alfardan it</td>
+                      <td>Regular</td>
+                      <td>individual</td>
+                      <td></td>
+                    </tr>       
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- scnd row -->
+          <div class="row">
+            <div class="col-xxl-6 col-xl-6">
+              <div class=" table-responsive tenant-table unique-table">
+                <div class="vehicle-table-caption">
+                  <h2 class="table-cap pb-2 mb-3 text-capitalize float-start clear-both">Vehicle Registered</h2>
+
+                  <a href="#" class="add-vahicle-btn float-end">Add Vehicle</a>
+                </div>
+                <table class="table  table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col"><span>Vehicle Name</span></th>
+                      <th scope="col"><span>Vehicle Model</span></th>
+                      <th scope="col"><span>Vehicle Color</span></th> 
+                      <th scope="col"><span>Registration number</span></th> 
+                      <th colspan="2"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                       
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="col-xxl-6 col-xl-6">
+              <div class=" table-responsive tenant-table unique-table">
+                <caption>
+                  <h2 class="table-cap pb-2 mb-3 text-capitalize float-start clear-both">Family Members</h2>
+                </caption>
+                <table class="table  table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col"><span>Name</span></th>
+                      <th scope="col"><span>Email</span></th>
+                      <th scope="col"><span>Phone Number</span></th>
+                      <th scope="col"><span>Reservation Time</span></th>
+                      <th colspan="2"></th>
+ 
+                    </tr>
+                  </thead>
+                  <tbody>
+                       
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- thrd row -->
+          <div class="row">
+            <div class="col-xxl-6 col-xl-6">
+              <div class=" table-responsive tenant-table unique-table">
+                <div class="housekeeper-table-caption">
+                  <h2 class="table-cap pb-2 mb-3 text-capitalize float-start clear-both">Housekeeper</h2>
+                  <a href="#" class="add-housekeeper-btn float-end">Add new housekeeper</a>
+                </div>
+                <table class="table  table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col"><span>Name</span></th>
+                      <th scope="col"><span>Contact Number</span></th>
+                      <th scope="col"><span>Qatar ID</span></th>
+                      <th colspan="2"></th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Name</td>
+                      <td>843765978</td>
+                      <td>87HD7GD72</td>
+                      <td><a href="#">edit</a></td>
+                      <td><a href="#">remove</a></td>                     
+                    </tr> 
+                    <tr>
+                      <td>Name</td>
+                      <td>843765978</td>
+                      <td>87HD7GD72</td>
+                      <td><a href="#">edit</a></td>
+                      <td><a href="#">remove</a></td>                    
+                    </tr>       
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="col-xxl-6 col-xl-6">
+              <div class=" table-responsive tenant-table">
+                <caption>
+                  <h2 class="table-cap pb-2 mb-3 text-capitalize float-start clear-both">Lifestyle Activities</h2>
+                </caption>
+                <table class="table  table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col"><span>Lifestyle type</span></th>
+                      <th scope="col"><span>Date Booked</span></th>
+                      <th scope="col"><span>No. of Reservation</span></th>
+                      <th scope="col"><span>Reservation Time</span></th>
+                      <th scope="col"><span>Rating</span></th> 
+                    </tr>
+                  </thead>
+                  <tbody>
+                          
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+           <!-- frth row -->
+          <div class="row">
+            <!-- <div class="col-xxl-6 col-xl-6">
+              <div class=" table-responsive tenant-table">
+                <caption>
+                  <h2 class="table-cap pb-2 mb-3 text-capitalize float-start clear-both">Hospitality Activities</h2>
+                </caption>
+                <table class="table  table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col"><span>Hospitality type</span></th>
+                      <th scope="col"><span>Date Booked</span></th>
+                      <th scope="col"><span>Date</span></th>
+                      <th scope="col"><span>Reservation Time</span></th>
+                      <th scope="col"><span>Rating</span></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Event</td>
+                      <td>11/12/2021</td>
+                      <td>3</td>
+                      <td>12:00 A.M</td>
+                      <td>5/5</td>
+                    </tr> 
+                    <tr>
+                      <td>Class</td>
+                      <td>11/12/2021</td>
+                      <td>2</td>
+                      <td>12:00 A.M</td>
+                      <td>4/5</td>
+                    </tr>       
+                  </tbody>
+                </table>
+              </div>
+            </div> -->
+            <div class="col-xxl-6 col-xl-6">
+              <div class=" table-responsive tenant-table">
+                <caption>
+                  <h2 class="table-cap pb-2 mb-3 text-capitalize float-start clear-both">Maintenance Requests</h2>
+                </caption>
+                <table class="table  table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col"><span>Maintenance Type</span></th>
+                      <th scope="col"><span>Ticket ID</span></th>
+                      <th scope="col"><span>Date Created</span></th>
+                      <th scope="col"><span>Status</span></th>
+                      <th scope="col"><span>Rating</span></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                         
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- ffth row -->
+          <div class="row">
+            <div class="col-xxl-6 col-xl-6">
+              <div class=" table-responsive tenant-table">
+                <caption>
+                  <h2 class="table-cap pb-2 mb-3 text-capitalize float-start clear-both">Concierge Requests</h2>
+                </caption>
+                <table class="table  table-bordered ">
+                  <thead>
+                    <tr>
+                      <th scope="col"><span>Request</span></th>
+                      <th scope="col"><span>Type</span></th>
+                      <th scope="col"><span>Date</span></th>
+                      <th scope="col"><span>Status</span></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Pet Request</td>
+                      <td>Special</td>
+                      <td>11/12/2021</td>
+                      <td>Pending</td>
+                    </tr> 
+                    <tr>
+                      <td>Service</td>
+                      <td>Type</td>
+                      <td>11/12/2021</td>
+                      <td>Done</td>
+                    </tr>       
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="col-xxl-6 col-xl-6">
+              <div class=" table-responsive tenant-table">
+                <caption>
+                  <h2 class="table-cap pb-2 mb-3 text-capitalize float-start clear-both">Sell Requests</h2>
+                </caption>
+                <table class="table  table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col"><span>Product Name</span></th>
+                      <th scope="col"><span>Category</span></th>
+                      <th scope="col"><span>Phone Number</span></th>
+                      <th scope="col"><span>Status</span></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Name</td>
+                      <td>Electronics</td>
+                      <td>00996123456</td>
+                      <td>Pending</td>
+                    </tr>  
+                    <tr>
+                      <td>Name</td>
+                      <td>Electronics</td>
+                      <td>00996123456</td>
+                      <td>Sold</td>
+                    </tr>       
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          
+          <!-- sixth row -->
+          <section>
+            <h2 class="review-heading">Review History</h2>
+                       <!--  <article class="article-wrapper">
+              <span class="event-title">Event Name</span>
+              <div class="rating-icon">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="description">
+                Event description…Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+              </p>
+              <time><span class="fst-italic">Added on</span> 12/20/2021</time>
+            </article>
+
+            <article class="article-wrapper">
+              <span class="event-title">Event Name</span>
+              <div class="rating-icon">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="description">
+                Event description…Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+              </p>
+              <time><span class="fst-italic">Added on</span> 12/20/2021</time>
+            </article> -->
+          </section>
+          
+        </main>
+
+
+    <script src="http://localhost/alfardan/public/alfardan/js/bootstrap.bundle.js"></script>
+	  <script src="http://localhost/alfardan/public/alfardan/js/jquery.min.js"></script>
+    <script  src="http://localhost/alfardan/public/alfardan/js/jquery.multiselect.js"></script>
+    <script src="http://localhost/alfardan/public/alfardan/js/fontawesome.js"></script>
+    <script src="http://localhost/alfardan/public/alfardan/js/main.js"></script>
+    <script src="http://localhost/alfardan/public/alfardan/js/uploadPreview.min.js"></script>
+    <script src="http://localhost/alfardan/public/alfardan/js/multiselect.min.js"></script>
+    <script src="http://localhost/alfardan/public/alfardan/js/slick.min.js"></script>
+
+
+    <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+
+
+
+
+    <script>
+      $(document).ready( function () {
+        $('#myTable').DataTable({
+          "ordering": false,
+           
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function() {
+      $.uploadPreview({
+        // for add modal
+      input_field: "#add-tenant-img-upload",
+      preview_box: "#add-tenant-img-preview",
+      label_field: "#add-tenant-img-label"
+      });
+      });
+    </script>
+   <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+    <script>
+ 
+     $('.show_confirm').click(function(event) {
+          var form =  $(this).closest("form");
+          var name = $(this).data("name");
+          event.preventDefault();
+
+          swal({
+              title: `Are you sure you want to delete this record?`,
+              text: "If you delete this, it will be gone forever.",
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              form.submit();
+            }
+          });
+      });
+    </script>  --> 
+
+    <script>
+      // insert user data in edit popup modal  
+      // $('#editUser').on('show.bs.modal', function (event) {
+      //   var button = $(event.relatedTarget) 
+      //   var firstname = button.data('firstname')
+      //   var lastname = button.data('lastname')
+      //   var email = button.data('email')
+      //   var phone = button.data('phone')
+      //   var apt = button.data('apt')
+      //   var userid = button.data('userid')
+      //   var image = button.data('userimage')
+      //   console.log(image)
+
+      //   var modal = $(this)
+      //   modal.find('.modal-body #first_name').val(firstname);
+      //   modal.find('.modal-body #last_name').val(lastname);
+      //   modal.find('.modal-body #email').val(email);
+      //   modal.find('.modal-body #mobile').val(phone);
+      //   modal.find('.modal-body #apt').val(apt);
+      //   modal.find('.modal-body #userid').val(userid);
+      //   $("#add-tenant-img-preview").css("background-image", "url(" + image + ")");
+      // })
+
+      // delete select user popup modal
+      $('#remove-item').on('show.bs.modal', function (event) {
+
+        var button = $(event.relatedTarget) 
+
+        var user_id = button.data('userid') 
+        var modal = $(this)
+
+        modal.find('.modal-body #user_id').val(user_id);
+      })
+
+      // reject accept user request for tenant popup
+      
+      $('#reject-item').on('show.bs.modal', function (event) {
+
+        var button = $(event.relatedTarget) 
+
+        var user_id = button.data('userid') 
+        var modal = $(this)
+
+        modal.find('.modal-body #userid').val(user_id);
+      })
+    </script> 
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        $(".profile-slider").slick({
+        lazyLoad: 'ondemand', // ondemand progressive anticipated
+        infinite: true
+      });
+      });
+    </script>
+
+    <script type="text/javascript"
+    src="https://maps.google.com/maps/api/js?key=AIzaSyANilfftq9AJHQyiZpUYrAfLu6QdB8JV20&libraries=places" ></script>
+    <!-- <script>
+      $(document).ready(function () {
+        $("#latitudeArea").addClass("d-none");
+        $("#longtitudeArea").addClass("d-none");
+      });
+    </script> -->
+    <script>
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+      function initialize(input) {
+      console.log(input);
+       
+
+        var autocomplete = new google.maps.places.Autocomplete(input);
+
+        autocomplete.addListener('place_changed', function () {
+          var place = autocomplete.getPlace();
+          $('.latitude').val(place.geometry['location'].lat());
+          $('.longitude').val(place.geometry['location'].lng());
+
+          // $("#latitudeArea").removeClass("d-none");
+          // $("#longtitudeArea").removeClass("d-none");
+        });
+
+
+
+      }
+       var inputs = document.getElementsByClassName('location');
+        
+        for(var i=0;i<inputs.length;i++){
+          initialize(inputs[i]);
+        }
+    </script>
+     
+  </body>
+</html>
