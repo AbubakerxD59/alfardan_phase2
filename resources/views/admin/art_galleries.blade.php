@@ -70,7 +70,7 @@
 							<div class="body-wrapper">
 								<h2 class="table-cap pb-2 text-capitalize mb-3 ms-2 mt-3 ">Add Art</h2>
 								     <button type="button" class="btn-close-modal float-end" data-bs-dismiss="modal" aria-label="Close"><i class="far fa-times-circle"></i></button>
-								<form method="post" enctype="multipart/form-data" action="{{route('admin.addArtGallery')}}">
+								<form method="post" enctype="multipart/form-data" action="{{route('admin.addArtGalleries')}}">
               					 {{csrf_field()}}
 								   	<input type="hidden" name="latitude" class="latitude" >
 								   	<input type="hidden" name="longitude" class="longitude">
@@ -161,7 +161,7 @@
 							<div class="body-wrapper">
 								<h2 class="table-cap pb-2 text-capitalize mb-3 ms-2 mt-3 ">Edit Art</h2>
 								     <button type="button" class="btn-close-modal float-end" data-bs-dismiss="modal" aria-label="Close"><i class="far fa-times-circle"></i></button>
-								<form method="post" enctype="multipart/form-data" action="{{route('admin.updateArtGallery')}}" id="editform">
+								<form method="post" enctype="multipart/form-data" action="{{route('admin.updateArtGalleries')}}" id="editform">
 									{{csrf_field()}}
 									
 									<input type="hidden" name="latitude" class="latitude"  id="latitude">
@@ -251,7 +251,7 @@
 <div class="modal remove-item" id="remove-item" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
  	<div class="modal-dialog modal-dialog-centered">
  		<div class="modal-content bg-transparent border-0">
- 			<form method="POST" action="{{ route('admin.deleteArtGallery','art') }}">
+ 			<form method="POST" action="{{ route('admin.deleteArtGalleries','art') }}">
  				{{method_field('delete')}}
  				{{csrf_field()}}
  				<div class="modal-body">
@@ -349,7 +349,7 @@
             var id=$(this).attr('id');
 
             $.ajax({
-            	url  : "{{route('admin.getArtGallery')}}",
+            	url  : "{{route('admin.getArtGalleries')}}",
             	type : 'Post',
             	data :{'id':id,_token:'{{ csrf_token() }}'},
             	dataType: 'json',

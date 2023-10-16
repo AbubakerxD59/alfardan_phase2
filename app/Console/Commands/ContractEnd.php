@@ -64,9 +64,11 @@ class ContractEnd extends Command
 
                 ],
                 function ($message) use ($email) {
-                    $message->to($email)->subject('Contract Expired.');
+                    $message->to('atta779@gmail.com')->subject('Contract Expired.');
+                    // $message->to($email)->subject('Contract Expired.');
                 });
             }
+            exit;
         }
     }
 }

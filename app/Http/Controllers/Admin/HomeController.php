@@ -7693,15 +7693,6 @@ class HomeController extends Controller
         return redirect()->back()->with('flash_success', 'Record added successfully!');
     }
 
-    public function artGalleries()
-    {
-        $properties = Property::all();
-        $art = ArtGallery::orderby('id', 'desc')->paginate(10);
-        return view('admin.art_galleries')
-            ->with('properties', $properties)
-            ->with('arts', $art);
-    }
-
     public function offers_delete(Request $request)
     {
         if (!empty($request->parking)) {

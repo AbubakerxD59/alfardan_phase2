@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ArtGalleriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -466,7 +467,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
         Route::get('art/gallery', 'HomeController@artGallery')->name('artGallery');
 
-        Route::get('art/galleries', 'HomeController@artGalleries')->name('artGalleries');
+        Route::get('art/galleries', 'ArtGalleriesController@index')->name('artGalleries');
 
         Route::get('offers/updates', 'HomeController@offerUpdates')->name('offerUpdates');
 
@@ -489,6 +490,14 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::post('update/art/gallery', 'HomeController@updateArtGallery')->name('updateArtGallery');
 
         Route::delete('delete/art/gallery', 'HomeController@deleteArtGallery')->name('deleteArtGallery');
+
+        Route::post('add/art/galleries', 'ArtGalleriesController@addArtGallery')->name('addArtGalleries');
+
+        Route::post('get/art/galleries', 'ArtGalleriesController@getArtGallery')->name('getArtGalleries');
+
+        Route::post('update/art/galleries', 'ArtGalleriesController@updateArtGallery')->name('updateArtGalleries');
+
+        Route::delete('delete/art/galleries', 'ArtGalleriesController@deleteArtGallery')->name('deleteArtGalleries');
 
         Route::post('add/art', 'HomeController@addArt')->name('addArt');
 

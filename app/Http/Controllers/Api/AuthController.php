@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use Mail;
 use App\Models\User;
 use App\Models\Employee;
+use App\Models\Concierge;
 use App\Jobs\ContractEnd;
 use Illuminate\Support\Str;
 use App\Models\FamilyMember;
@@ -110,18 +111,6 @@ class AuthController extends BaseController
         $code = rand(10000,99999);
 		$user->update(['device_token'=>$request->device_token, 'email_ver_code'=>$code]);
         $token = $user->createToken('MyApp')->plainTextToken;
-        if($user->status == '1'){
-            Mail::send('emailtemplate.email_verification_code',['otp_code'=>$code, 'user_data' => $user],
-            function($message) use ($user){
-                // $message->to('abmasood5900@gmail.com')->subject('Alfardan Living App - Verification Code');
-                $message->to($user->email)->subject('Alfardan Living App - Verification Code');
-            });
-        }
-
-        if($user->status == '2'){
-            return $this->errorResponse('Your contract has been expired. Please contact Alfardan Team.');
-        }
-
         $data = [
             'token' => $token,
             'user' => $user
@@ -135,6 +124,11 @@ class AuthController extends BaseController
         // $diffInSeconds = (int)round($diff/(60*60*24));
         if($diff <= 0){
             $user->status = 2;
+            $user->email_ver_code = null;
+            $user->save();
+        } else {
+            $user->status = 1;
+			$user->email_ver_code = $code;
             $user->save();
         }
         $m2 = strtotime(date('Y-m-d', $endDate));
@@ -165,8 +159,22 @@ class AuthController extends BaseController
             }
         } else {
             $user->status = 2;
+            $user->email_ver_code = null;
             $user->save();
         }
+        if($user->status == '1'){
+            Mail::send('emailtemplate.email_verification_code',['otp_code'=>$code, 'user_data' => $user],
+            function($message) use ($user){
+                // $message->to('abmasood5900@gmail.com')->subject('Alfardan Living App - Verification Code');
+                $message->to($user->email)->subject('Alfardan Living App - Verification Code');
+            });
+        }
+
+        if($user->status == '2'){
+            return $this->successResponse($data, 'Your contract has been expired. Please contact Alfardan Team.');
+            // return $this->errorResponse('Your contract has been expired. Please contact Alfardan Team.');
+        }
+
         // Contract End
         $concierge = Concierge::latest()->first();
 		$user->concierge_safety_handbook = $concierge->safety;
@@ -189,7 +197,7 @@ class AuthController extends BaseController
             return $this->errorResponse('User with this email is not found', 200);
         }
 		else{
-			$password = Str::random(8);;
+			$password = Str::random(8);
 			$hashed = Hash::make($password);
 			 Mail::send(
 					'emailtemplate.forgotpassword', 

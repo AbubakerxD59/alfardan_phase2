@@ -18,6 +18,6 @@
     <br><br>
     <span>Please do not share this OTP with anyone. If you have not requested this verification code, change your account password as soon as possible. </span>
     <br><br>
-    </span>Thank you.</span>
+    <span>Thank you.</span>
 </body>
 </html>

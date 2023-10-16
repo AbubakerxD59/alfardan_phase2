@@ -127,10 +127,15 @@ class HomeController extends BaseController
                 }
             } else {
                 $file = $request->File('images');
+                return $file->getSize();
+                $sizeInBytes = $file->getSize();
+                $sizeInMb = $sizeInBytes / (1024*1024);
+                if($sizeInMb > 2){
+
+                }
                 $name = time() .'-'. '1' .'.'. $file->extension();
-                return $name;
                 $img_resize = InterventionImage::make($file->getRealPath())
-                    ->orientate()->save(public_path('uploads/' . $name));
+                    ->orientate()->save(public_path('uploads/' . $name))->encode('jpg', $compressionRate);
                 // $img_resize->resize(300,300);
                 // $img_resize->save(public_path('uploads/'.$image));
                 $file->storeAs('', $name, 'uploads');
@@ -193,15 +198,19 @@ class HomeController extends BaseController
 	}
     
     public function getNotification(Request $request){
-       		$notification=Notification::whereNull('user_id')->orwhere('user_id', auth()->id())->orderBy('id', 'desc');
-			
-           	$notification->where('is_read',0);
-            $data = [
-                'Notification' => $notification->get(),
-                //'others' => Notification::where('user_id', auth()->id())->get()
-            ];
-            return $this->successResponse($data);
+        $user = auth()->user();
+        // $notification=Notification::whereNull('user_id')->orwhere('user_id', auth()->id())->orderBy('id', 'desc');
+        $notification=Notification::where('user_id', auth()->id())->orwhere(function($q) use ($user){
+           $q->where('property_id', $user->property);
+           $q->orWhere('apartment_id', $user->apt_number); 
+        })->orderBy('id', 'desc');
         
+        $notification->where('is_read',0);
+        $data = [
+            'Notification' => $notification->get(),
+            //'others' => Notification::where('user_id', auth()->id())->get()
+        ];
+        return $this->successResponse($data);
     }
 	
 	 public function readNotification($id){

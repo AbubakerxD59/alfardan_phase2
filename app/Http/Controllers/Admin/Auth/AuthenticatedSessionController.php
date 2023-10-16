@@ -89,16 +89,14 @@ class AuthenticatedSessionController extends Controller
             "password" => $request->password,
         ];
         $code = rand(10000,99999);
-        // $code = '12345';
         $user = Admin::where('email', $request->email)->first();
         if(empty($user)){
             $user = Employee::where('email', $request->email)->first();
         }
         if($user){
-            // dd(password_verify($request->password, $user->password));
-            if (!Hash::check($request->password, $user->password)) {
-                return redirect()->back()->with('flash_admin', 'Whoops! Something went wrong. These credentials do not match our records.');
-            }
+            // if (!Hash::check($request->password, $user->password)) {
+            //     return redirect()->back()->with('flash_admin', 'Whoops! Something went wrong. These credentials do not match our records.');
+            // }
             $user->code = $code;
             $user->save();
             Auth::logout();

@@ -67,7 +67,7 @@
 			 	</li>
         <li class="nav-item border-left">
           <a class="nav-link" href="{{route('admin.users.expired_contracts')}}">
-					Expired Contracts
+					Inactive Contracts
 				  </a>
 			 	</li>
 			 @endif
