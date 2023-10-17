@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ArtGalleriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -590,9 +589,11 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
         Route::post('event/term', 'HomeController@event_term')->name('event_term');
 
-        Route::get('notifications/{id?}', 'HomeController@notifications')->name('notifications');
+        Route::get('notifications/{id?}', 'NotificationEmailController@index')->name('notifications');
 
-        Route::get('notifications/datatable/list', 'HomeController@notification_listing')->name('notifications.listing');
+        Route::get('notifications/datatable/list', 'NotificationEmailController@listing')->name('notifications.listing');
+        
+        Route::get('notification/more_detail/{category?}', 'NotificationEmailController@more_detail')->name('more_detail');
 
         Route::post('notification/add', 'HomeController@notificationadd')->name('notificationadd');
 

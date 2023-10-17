@@ -91,7 +91,7 @@ Route::middleware('auth:sanctum')->group(function(){
     // Route::get('home', [HomeController::class, 'categories']);
     Route::get('newsfeed', [HomeController::class, 'newsfeed']);
 	Route::get('art/gallery', [HomeController::class, 'artGallery']);
-    Route::get('artgallery/{id}', [HomeController::class, 'art_gallery']);
+    Route::get('artgallery/{id}/{type}', [HomeController::class, 'art_gallery']);
 	Route::get('offers/updates', [HomeController::class, 'offerUpdates']);
 	Route::get('offers', [HomeController::class, 'offer']);
 	Route::get('lifestyle/newsfeed', [HomeController::class, 'lifestyleNewsFeed']);
@@ -146,7 +146,7 @@ Route::middleware('auth:sanctum')->group(function(){
 
     Route::get('all/products/featured', [ProductController::class, 'all_featured']);
 
-    // Route::post('upload/images', [HomeController::class, 'uploadImages']);
+    Route::post('upload/images', [HomeController::class, 'uploadImages']);
     Route::get('lifestyle/history', [HomeController::class, 'lifestyleHistory']);
 
     Route::get('maintenance/requests', [MaintenanceController::class, 'requests']);
@@ -222,5 +222,6 @@ Route::middleware('auth:sanctum')->group(function(){
 	Route::get('get/tenant/registration', [TenantRegistrationController::class, 'index']);
     Route::get('get/newsletter', [HomeController::class, 'get_newsletter']);
     Route::get('newsletter', [HomeController::class, 'newsletter']);
+
+    Route::get('art/galleries', [HomeController::class, 'artGalleries']);
 });
-Route::post('upload/images', [HomeController::class, 'uploadImages']);

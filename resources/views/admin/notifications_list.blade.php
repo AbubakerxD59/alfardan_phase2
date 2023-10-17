@@ -8,6 +8,16 @@
 
 @section('content')
 
+<style>
+    .tenant-table table tr td:nth-last-child(2) {
+        background-color: transparent;
+    }
+
+    .tenant-table table tr td:last-child {
+        background-color: #C89328;
+    }
+
+</style>
 
 <main class="col-md-12 ms-lg-auto col-lg-10 px-md-4 pt-5 position">
     @include('notification.notify')
@@ -77,11 +87,15 @@
                     data: 'property_id'
                 }
                 , {
-                    data: 'apartment'
+                    data: 'apartment_id'
                 }
                 , {
-                    data: 'cat'
-                },
+                    data: 'category'
+                , }
+                , {
+                    data: 'detail'
+                    , orderable: false
+                }
 
             ]
         , });

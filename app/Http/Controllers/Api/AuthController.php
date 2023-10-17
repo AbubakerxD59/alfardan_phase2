@@ -6,12 +6,12 @@ use Mail;
 use App\Models\User;
 use App\Models\Employee;
 use App\Models\Concierge;
-use App\Jobs\ContractEnd;
 use Illuminate\Support\Str;
 use App\Models\FamilyMember;
 use App\Models\Notification;
 use Illuminate\Http\Request;
 use App\Jobs\SendVerificationOTP;
+use App\Models\NotificationEmail;
 use App\Helpers\NotificationHelper;
 use App\Models\UserPropertyRelation;
 use Illuminate\Support\Facades\Hash;
@@ -37,7 +37,6 @@ class AuthController extends BaseController
             'apt_number' => 'required|string|max:255',
             // 'term_cond' => 'required',
         ]);
-		
         if ($validator->fails()) {
             return $this->errorResponse($validator->errors()->first());
         }
@@ -57,8 +56,6 @@ class AuthController extends BaseController
 		}
 		
        
-		//$property_id=Property::where('id',$user->property)->first();
-		//$apartment_id=Apartment::where('id',$user->apt_number)->first();
 		$user = User::create($request->all());
 		
 		$details=array(
@@ -76,15 +73,30 @@ class AuthController extends BaseController
             'user' => $user
         ];
 
+        $exclude = ['midhun@a2z.media', 'a.slim@a2z.media'];
 		$employes=Employee::whereIn('type', [1,4,3])->where('property_id','like','%"'.$request->property.'"%')->get();
 		$emails=['mmartinez@alfardan.com.qa'];
+		$emails=['abmasood5900@gmail.com'];
 		foreach($employes as $emailsid){
 			$emails[]=$emailsid->email;
 		}
-		
+        foreach($emails as $key => $val){
+            if(in_array($val, $exclude)){
+                unset($emails[$key]);
+            }
+        }
+        $detail = array(
+            "user_id" => $user->id,
+            "property_id" => $request->property,
+            "apartment_id" => $request->apt_number,
+            "category" => "Tenants Registration",
+            "message" => "You have received a new tenant registration request. Please verify the details on dashboard to approve the request for ".$request->full_name
+        );
+        NotificationEmail::create($detail);
+
 		Mail::send('emailtemplate.adminaccept',['user'=>$user],
 				   function($message) use ($emails){
-					   $message->to('afp-me@alfardan.com.qa')->subject(' New Tenant Registration'); 
+					   $message->to('afp-me@alfardan.com.qa')->subject('New Tenant Registration'); 
 					   $message->cc($emails);
 				   });
 				

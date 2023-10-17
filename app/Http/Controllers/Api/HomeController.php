@@ -18,12 +18,13 @@ use App\Models\ClassEvent;
 use App\Models\NewsLetter;
 use App\Models\Restaurant;
 use App\Models\OfferUpdate;
+use App\Models\ArtGalleries;
 use App\Models\Notification;
 use Illuminate\Http\Request;
 use App\Models\TermCondition;
-use Intervention as InterventionImage;
 use App\Models\NewsLetterHead;
 use App\Models\AlfardanProfile;
+use Intervention as InterventionImage;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Api\BaseController;
 
@@ -199,10 +200,8 @@ class HomeController extends BaseController
     
     public function getNotification(Request $request){
         $user = auth()->user();
-        // $notification=Notification::whereNull('user_id')->orwhere('user_id', auth()->id())->orderBy('id', 'desc');
         $notification=Notification::where('user_id', auth()->id())->orwhere(function($q) use ($user){
            $q->where('property_id', $user->property);
-           $q->orWhere('apartment_id', $user->apt_number); 
         })->orderBy('id', 'desc');
         
         $notification->where('is_read',0);
@@ -344,11 +343,18 @@ class HomeController extends BaseController
         return $this->successResponse($data);
     }
 
-    public function art_gallery($id=null){
+    public function art_gallery($id=null, $type=null){
         if(!empty($id)){
-            $data = [
-                'Art' => ArtGallery::find($id)
-            ];    
+            if($type == 'shop'){
+                $data = [
+                    'Art' => ArtGallery::find($id)
+                ];    
+            }
+            if($type == 'art'){
+                $data = [
+                    'Art' => ArtGalleries::find($id)
+                ];
+            }
             return $this->successResponse($data);
         }
     }
@@ -369,6 +375,13 @@ class HomeController extends BaseController
     public function newsletter(){
         $data = array(
             "Newsletter" => NewsLetterHead::find('1')
+        );
+        return $this->successResponse($data);
+    }
+
+    public function artGalleries(){
+        $data = array(
+            "Art" => ArtGalleries::all()
         );
         return $this->successResponse($data);
     }
